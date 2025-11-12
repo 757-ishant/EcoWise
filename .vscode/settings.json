@@ -1,0 +1,7 @@
+{
+  "code-runner.runInTerminal": false,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.executorMap": {
+    "python": "python -u"
+  }
+}

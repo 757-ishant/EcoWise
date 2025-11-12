@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify - EcoWise</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/classify.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-leaf"></i>
+                <span>EcoWise</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="classify.html" class="nav-link active">Classify</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="results.html" class="nav-link">Results</a></li>
+                <li><a href="guide.html" class="nav-link">Guide</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="classify-main">
+        <div class="container">
+            <div class="classify-header">
+                <h1>Classify Your Waste</h1>
+                <p>Upload an image to get instant AI-powered waste classification</p>
+            </div>
+
+            <div class="classify-container">
+                <div class="upload-section">
+                    <form id="upload-form">
+                        <div class="dropzone" id="dropzone">
+                            <input type="file" id="image-input" accept="image/*" hidden>
+                            <div class="dropzone-content">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <h3>Drop your image here</h3>
+                                <p>or <span class="browse-text">browse files</span></p>
+                                <small>JPG, PNG, GIF (Max 16MB)</small>
+                            </div>
+                        </div>
+                        
+                        <div class="image-preview" id="image-preview" style="display: none;">
+                            <img id="preview-img" src="" alt="Preview">
+                            <div class="preview-actions">
+                                <button type="button" id="remove-image" class="btn btn-secondary">
+                                    <i class="fas fa-times"></i>
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" id="classify-btn" class="btn btn-primary" disabled>
+                                <i class="fas fa-brain"></i>
+                                Classify Image
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="results-section">
+                    <div class="results-container" id="results-container">
+                        <div class="empty-state">
+                            <i class="fas fa-image"></i>
+                            <h3>No Image Selected</h3>
+                            <p>Upload an image to see classification results</p>
+                        </div>
+                    </div>
+
+                    <div class="loading-state" id="loading-state" style="display: none;">
+                        <div class="loading-spinner"></div>
+                        <h3>Analyzing Image...</h3>
+                        <p>Our AI is processing your image</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoWise</span>
+                </div>
+                <p>&copy; 2025 EcoWise. Making waste management smarter with AI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="classify.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - EcoWise</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-leaf"></i>
+                <span>EcoWise</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="classify.html" class="nav-link">Classify</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="results.html" class="nav-link active">Results</a></li>
+                <li><a href="guide.html" class="nav-link">Guide</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="stats" style="padding-top: 8rem;">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--text-light);">Classification Results</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" id="total-count">0</div>
+                        <div class="stat-label">Total Classifications</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="avg-confidence">0%</div>
+                        <div class="stat-label">Average Confidence</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="recyclable">0%</div>
+                        <div class="stat-label">Recyclable Items</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Classification Distribution</h2>
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem;">
+                    <canvas id="distribution-chart" style="max-height: 400px;"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border-radius: 15px; padding: 2rem; overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid rgba(255, 255, 255, 0.2);">
+                                <th style="padding: 1rem; text-align: left; color: var(--text-light);">Image</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--text-light);">Classification</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--text-light);">Confidence</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--text-light);">Date</th>
+                                <th style="padding: 1rem; text-align: left; color: var(--text-light);">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-tbody">
+                            <tr>
+                                <td colspan="4" style="text-align: center; padding: 2rem; color: rgba(255, 255, 255, 0.7);">
+                                    Loading results...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-leaf"></i>
+                    <span>EcoWise</span>
+                </div>
+                <p>&copy; 2025 EcoWise. Making waste management smarter with AI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="results.js"></script>
+</body>
+</html>
